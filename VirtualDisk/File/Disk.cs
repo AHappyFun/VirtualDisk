@@ -176,6 +176,7 @@ namespace VirtualDisk
             {
                 Console.WriteLine("不可移动根结点");
             }
+            Console.WriteLine("移动：{0}--->{1}", n.GetPath(), destNode.GetPath());
         }
 
         /// <summary>
@@ -232,12 +233,6 @@ namespace VirtualDisk
                 }
                 n.CopyData(nodes[i]);
             }
-        }
-
-        void CreateNodes(string[] names, bool isFullPath)
-        {
-            //先找到不存在的层级，然后往下创建
-
         }
 
         /// <summary>

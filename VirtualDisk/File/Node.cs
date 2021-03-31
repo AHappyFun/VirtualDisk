@@ -58,6 +58,13 @@ namespace VirtualDisk
             }
         }
 
+        ~Node()
+        {
+            name = null;       
+            fullPath = null;
+            parent = null;
+        }
+
         /// <summary>
         ///  通过结点得出磁盘绝对路径
         /// </summary>

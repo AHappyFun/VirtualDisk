@@ -41,6 +41,11 @@ namespace VirtualDisk
                     {
                         string[] namelist = CmdStrTool.SplitPathToNameList(paths[i]);
                         Node n = disk.NameListToNode(namelist, IsSupportWildcard);
+                        if(n.index == disk.current.index)
+                        {
+                            Console.WriteLine("无法删除正在使用的当前路径");
+                            return null;
+                        }
                         if (n != null)
                         {
                             List<Node> dels = new List<Node>();
