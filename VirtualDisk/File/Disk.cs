@@ -254,22 +254,6 @@ namespace VirtualDisk
 
 
         //-------------外部调用------------------
-        public Disk ExecuteCmd(string cmdStr)
-        {
-            string cmdParam = String.Empty;
-            CmdType type = CmdStrTool.JudgeCmdType(cmdStr, out cmdParam);
-
-            ICommand cmd = CmdCreater.Instance.CreateCommand(type, this);
-
-            if (cmd != null)
-            {
-                return cmd.Execute(this, cmdParam);
-            }
-            else
-            {
-                return null;
-            }
-        }
 
         /// <summary>
         /// 通过namelist转换成结点

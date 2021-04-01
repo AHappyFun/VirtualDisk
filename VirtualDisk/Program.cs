@@ -59,7 +59,7 @@ namespace VirtualDisk
                 {
                     break;
                 }
-                Disk d = disk.ExecuteCmd(cmd);
+                Disk d = CmdCreater.Instance.ExecuteCmd(cmd, disk);
                 if (d != null)
                 {
                     disk = d;

@@ -13,62 +13,6 @@ namespace VirtualDisk
     class CmdStrTool
     {
         /// <summary>
-        /// 将cmd命令拆分成命令类型和后面的参数
-        /// </summary>
-        public static CmdType JudgeCmdType(string cmd, out string param)
-        {
-            string[] ar = cmd.ToLower().Trim().Split(new char[] { ' ' }, 2);
-            string tmp = ar[0];
-            if(ar.Length > 1)
-            {
-                param = ar[1];
-            }
-            else
-            {
-                param = "";
-            }
-
-            if (string.IsNullOrEmpty(tmp) || tmp == "")
-            {
-                ShowTips(1);
-                return CmdType.None;
-            }
-            else
-            {
-                switch (tmp)
-                {
-                    case "dir":
-                        return CmdType.Dir;
-                    case "md":
-                        return CmdType.Md;
-                    case "cd":
-                        return CmdType.Cd;
-                    case "copy":
-                        return CmdType.Copy;
-                    case "del":
-                        return CmdType.Del;
-                    case "rd":
-                        return CmdType.Rd;
-                    case "ren":
-                        return CmdType.Ren;
-                    case "move":
-                        return CmdType.Move;
-                    case "mklink":
-                        return CmdType.Mklink;
-                    case "save":
-                        return CmdType.Save;
-                    case "load":
-                        return CmdType.Load;
-                    case "cls":
-                        return CmdType.Cls;
-                }
-                ShowTips(1);
-                return CmdType.None;
-            }
-
-        }
-
-        /// <summary>
         /// 将命令参数拆分成路径参数和附加参数
         /// </summary>
         public  static void SplitParam(string param, string[] supportAddParam, out string path, out string addParam)
